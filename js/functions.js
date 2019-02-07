@@ -206,7 +206,7 @@ function killOrder() {
       playerScore.value -= points[targetLevel];
       //evalScore(playerScore.value);
       $('#score').text(playerScore.value);
-      soundEffect('buzzer.mp3');
+      soundEffect('bulbbreak.mp3');
       resetBoard(); 
     }
   evalScore(playerScore.value);
@@ -227,9 +227,11 @@ function resetBoard() {
 function evalScore(score) {
   if (score <= minScore) {
     $('.scoreboard').css('color', 'orangered');
+    soundEffect('evacuation.mp3')
     toggleModalLose();
   } else if (score >= maxScore) {
     $('.scoreboard').css('color', 'yellowgreen');
+    soundEffect('ilovetosinga.mp3')
     toggleModalWin();
   } else {
     switch(score) {
