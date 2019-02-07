@@ -38,6 +38,20 @@ html {
   background-color: lightslategray;
 }
 
+.sosbutton {
+  position: absolute;
+  background: url("../img/sos-button.png") no-repeat center center;
+  background-size: 100%;
+  border-radius: 25%;
+  width: 3vw;
+  height: 3vw;
+  border: 2px solid #4C4C4C;
+  box-shadow: 0 10px #4C4C4C;
+  /*background-color: lightslategray;*/
+  left: 0;
+  top: 0;
+}
+
 h3 {
   display: flex;
   align-items: center;
@@ -99,7 +113,6 @@ button:active {
   font-family: American Typewriter, serif;
   box-shadow: 0 0 10px black;
 }
-
 
 .key-row-one {
   display: flex;
@@ -251,4 +264,5 @@ input {
   right: 0;
   top: 0;
   border-radius: 25px;
+  visibility: hidden;
 }

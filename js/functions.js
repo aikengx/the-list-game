@@ -5,7 +5,7 @@ function encryptString(str, baseRotor) {
     rotate(rotor);
     encryptedString += rotor[alphabet.indexOf(str[i])]; 
   }
-  console.log(encryptedString);
+  //console.log(encryptedString); //See encrypted string!
   return encryptedString;
 };
 
@@ -17,7 +17,7 @@ function decryptString(str, baseRotor) {
     rotate(rotor);
     decryptedString += alphabet[rotor.indexOf(str[i])];
   }
-  console.log(decryptedString);
+  //console.log(decryptedString); //Show decrypted string!
 };
 
 
@@ -62,7 +62,7 @@ function targetBuilder() {
   }
   stringToMorse(target);
   morsePlay(morseBuilder(encryptString(target.toLowerCase(), rotorI)));
-  console.log([target, targetLevel]);
+  //console.log([target, targetLevel]); //See target and target rank level!
   objective = target.toLowerCase();
   return [target, targetLevel];
 };
@@ -73,7 +73,7 @@ function stringToMorse(str) {
   for (var i = 0; i < str.length; i++) {
     strInMorse += morse[str[i].toLowerCase()].code + " ";
   }
-  console.log(strInMorse);
+  //console.log(strInMorse); //See morse code string!
 };
 
 
@@ -82,7 +82,7 @@ function morseBuilder(str) {
   for (var i = 0; i < str.length; i++) {
     morse_files.push(morse[str[i].toLowerCase()].sound);
   }
-  console.log(morse_files);
+  //console.log(morse_files); //See morse audio file playlist!
   return morse_files;
 };
 
@@ -93,7 +93,7 @@ function play_audio(arr) {
     src: [audio_url+arr[0]],
     volume: 0.5,
     onplay: function() {
-      console.log(objective[objective.length - arr.length]);
+      //console.log(objective[objective.length - arr.length]); //See the clear text letter iteration!
       $('#' + arr[0].substring(0, 1)).toggleClass('key-on');
       morseStr += morse[arr[0].substring(0, 1)].code + " "; 
       $('#morse-code-letter').text(morseStr);
@@ -105,7 +105,7 @@ function play_audio(arr) {
       arr.shift();
       if (arr.length > 0) {
         play_audio(arr);
-        console.log(`=> ${arr[0]}`);
+        //console.log(`=> ${arr[0]}`);  //See the morse audio file played!
       }
     }
   });
@@ -132,13 +132,13 @@ function killOrder() {
     soundEffect('buzzer.mp3');
     alert("YOU MUST ACQUIRE A TARGET FIRST!");
   } else {
-    console.log(objective);
-    console.log(points[targetLevel]);
+    //console.log(objective); //See the objective variable!
+    //console.log(points[targetLevel]); //See the targetLevel variable!
     var targetName = $('#killorder').val();
     $('#killorder').val("");
-    console.log(`targetName => ${targetName}`);
+    //console.log(`targetName => ${targetName}`); //See the targetName variable!
     if (targetName == objective) {
-      console.log(`points => ${points[targetLevel]}`);
+      //console.log(`points => ${points[targetLevel]}`);  //See the target value in points!
       playerScore.value += points[targetLevel];
       $('#score').text(playerScore.value);
       soundEffect('sniperreload.mp3');
@@ -204,6 +204,16 @@ function evalScore(score) {
         break;
     }
   }
+};
+
+
+function morseChart() {
+  if (document.getElementById("morse-chart").style.visibility == "hidden") {
+    document.getElementById("morse-chart").style.visibility="visible";
+  } else {
+    document.getElementById("morse-chart").style.visibility="hidden";
+  }
+  
 };
 
 

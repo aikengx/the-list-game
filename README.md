@@ -20,7 +20,7 @@ Below the input field, you start the game by pressing the button with the MI-5 l
 
 Using the sound and the visual morse reference, write down the decrypted message letter by letter as its corresponding lightbulb would not have a corresponding sound or printed code.
 
-Relay your orders by submitting the decoded message using the button to the left under the input field.
+Relay your orders by submitting the decoded message using the button with the skull to the left under the input field. You can also press the ENTER key.
 
 The decrypted string will be a rank, first and last name of a double agent, in lowercase and without spaces.
 
@@ -36,4 +36,7 @@ Points are awarded as follows:
 - 3 points for Officers.
 - 4 points for Generals.
 
-In case the message is not properly decoded, the target's value will be deducted. The operator has the option of passing by deducting just one point. This is done by pressing the relay orders button to the left, while the input field is empty. 
+In case the message is not properly decoded, the target's value will be deducted. The operator has the option of passing by deducting just one point. This is done by pressing the relay orders button to the left, while the input field is empty.
+
+### Hint:
+Use the SOS button on the top left corner to open a morse chart for reference.
