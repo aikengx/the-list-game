@@ -2,7 +2,6 @@ function encryptString(str, baseRotor) {
   let rotor = [...baseRotor];
   encryptedString = rotor[alphabet.indexOf(str[0])];
   for (var i = 1; i < str.length; i++) {
-    //$('#' + str[i]).toggleClass('key-on'); 
     rotate(rotor);
     encryptedString += rotor[alphabet.indexOf(str[i])]; 
   }
@@ -62,15 +61,8 @@ function targetBuilder() {
     }
   }
   stringToMorse(target);
-  //encryptString(target.toLowerCase(), rotorI);
   morsePlay(morseBuilder(encryptString(target.toLowerCase(), rotorI)));
-  /*
-  let reversedObjective  = lightBoard(objective.toLowerCase());
-  console.log(reversedObjective[arr.length]);
-  $('#' + reversedObjective[0]).toggleClass('key-on'); 
-  */
   console.log([target, targetLevel]);
-  //$('#score').text(points[targetLevel]);
   objective = target.toLowerCase();
   return [target, targetLevel];
 };
@@ -82,7 +74,6 @@ function stringToMorse(str) {
     strInMorse += morse[str[i].toLowerCase()].code + " ";
   }
   console.log(strInMorse);
-  //morseStr = strInMorse;
 };
 
 
@@ -97,73 +88,36 @@ function morseBuilder(str) {
 
 
 function play_audio(arr) {
-  //console.log(`objective => ${objective}`);
-  //console.log(`=> ${target}`)
-  //debugger
-  //$('body').removeClass('key-on');
-  //debugger
   soundEffect('typewriter.mp3');
-  /*
-  let printing = new Howl({
-  src: [audio_url + 'typewriter.mp3']
-  });
-  printing.play()
-  */
-  //
   sound = new Howl({
     src: [audio_url+arr[0]],
     volume: 0.5,
     onplay: function() {
-      //console.log(morseStr);
       console.log(objective[objective.length - arr.length]);
-      //console.log(arr.length);
-      //let reversedObjective  = lightBoard(objective.toLowerCase());
-      //console.log(reversedObjective[arr.length]);
-      
-      //$('#' + reversedObjective[arr.length]).toggleClass('key-on');
       $('#' + arr[0].substring(0, 1)).toggleClass('key-on');
       morseStr += morse[arr[0].substring(0, 1)].code + " "; 
       $('#morse-code-letter').text(morseStr);
       $('#' + objective[objective.length - arr.length]).toggleClass('key-on');
     },
     onend: function() {
-      //let reversedObjective  = lightBoard(objective.toLowerCase());
-      //console.log(reversedObjective[arr.length]);
-      //!console.log(objective[arr.length - 1])
-      //$('#' + reversedObjective[arr.length]).toggleClass('key-on');
-      //$('#' + objective[0].toLowerCase()).toggleClass('key-on');
       $('#' + arr[0].substring(0, 1)).toggleClass('key-on');
       $('#' + objective[objective.length - arr.length]).toggleClass('key-on');
       arr.shift();
-      //reversedObjective.pop();
       if (arr.length > 0) {
         play_audio(arr);
         console.log(`=> ${arr[0]}`);
-        //$('#' + arr[0].substring(0, 1)).toggleClass('key-on');
-        //arr.shift(); 
       }
     }
   });
   sound.play();
-  //morseStr = "";
-}
+};
 
 
 function morsePlay(arr) {
-  //console.log(`=> ${target}`);
   let playlist = [...arr]
-  //console.log(`objective => ${objective}`); 
   play_audio(playlist)
 };
 
-/*
-function typeWriter() {
-  let typing = new Howl({
-    src: [audio_url + 'typewriter-key.mp3']
-    });
-    typing.play()
-};
-*/
 
 function soundEffect(sound) {
   let soundfx = new Howl({
@@ -174,7 +128,6 @@ function soundEffect(sound) {
 
 
 function killOrder() {
-  //console.log(targetLevel);
   if (targetLevel === "") {
     soundEffect('buzzer.mp3');
     alert("YOU MUST ACQUIRE A TARGET FIRST!");
@@ -183,39 +136,32 @@ function killOrder() {
     console.log(points[targetLevel]);
     var targetName = $('#killorder').val();
     $('#killorder').val("");
-    //i$('#killorder').trigger("reset");
     console.log(`targetName => ${targetName}`);
-    //alert(targetName);
     if (targetName == objective) {
       console.log(`points => ${points[targetLevel]}`);
       playerScore.value += points[targetLevel];
-      //evalScore(playerScore.value);
       $('#score').text(playerScore.value);
       soundEffect('sniperreload.mp3');
-      //alert(`YOU WON ${points[targetLevel]} POINTS!`);
       resetBoard();
     } else if (targetName == "") {
-      //alert(`YOU LOST 1 POINT!`);
       playerScore.value--;
-      //evalScore(playerScore.value);
       $('#score').text(playerScore.value);
       soundEffect('bulbbreak.mp3');
       resetBoard(); 
     } else if (targetName == "winner") {
+      soundEffect('sniperreload.mp3');
       evalScore(maxScore);
     } else if (targetName == "loser") {
+      soundEffect('bulbbreak.mp3');
       evalScore(minScore);
     } else {
-      //alert(`YOU LOST ${points[targetLevel]} POINTS!`);
       playerScore.value -= points[targetLevel];
-      //evalScore(playerScore.value);
       $('#score').text(playerScore.value);
       soundEffect('bulbbreak.mp3');
       resetBoard(); 
     }
   evalScore(playerScore.value);
   }
-  //console.log(missionPoints);
 };
 
 
@@ -258,13 +204,14 @@ function evalScore(score) {
         break;
     }
   }
-}
+};
 
 
 function toggleModalLose() {
   document.querySelector('.bg-modal-lose').style.display = "flex";
-}
+};
+
 
 function toggleModalWin() {
   document.querySelector('.bg-modal-win').style.display = "flex";
-}
+};

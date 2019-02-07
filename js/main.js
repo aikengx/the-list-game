@@ -12,13 +12,6 @@ $(document).ready(function() {
 
 
     $('.missionbutton').click(function() {
-        /*
-        var sound = new Howl({
-            src: [audio_url + 'radiotune.mp3']
-        });
-        sound.play();
-        */
-        //morseStr = "";
         console.log(morseStr);
         console.log(targetLevel);
         console.log(objective);
