@@ -201,6 +201,10 @@ function killOrder() {
       $('#score').text(playerScore.value);
       soundEffect('bulbbreak.mp3');
       resetBoard(); 
+    } else if (targetName == "demowinner") {
+      evalScore(maxScore);
+    } else if (targetName == "demoloser") {
+      evalScore(minScore);
     } else {
       //alert(`YOU LOST ${points[targetLevel]} POINTS!`);
       playerScore.value -= points[targetLevel];
