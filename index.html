@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The List</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://use.edgefonts.net/unifrakturcook:n7:all;unifrakturmaguntia.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <h1 id="main-title">The List</h1>
+    <div class="key-row-one">
+      <span id="q" class="key">Q</span>
+      <span id="w" class="key">W</span> 
+      <span id="e" class="key">E</span>
+      <span id="r" class="key">R</span>
+      <span id="t" class="key">T</span>
+      <span id="z" class="key">Z</span>
+      <span id="u" class="key">U</span>
+      <span id="i" class="key">I</span>
+      <span id="o" class="key">O</span>
+    </div>
+    <div class="key-row-two">
+      <span id="a" class="key">A</span>
+      <span id="s" class="key">S</span>
+      <span id="d" class="key">D</span>
+      <span id="f" class="key">F</span>
+      <span id="g" class="key">G</span>
+      <span id="h" class="key">H</span>
+      <span id="j" class="key">J</span>
+      <span id="k" class="key">K</span>
+    </div>
+    <div class="key-row-three">
+      <span id="p" class="key">P</span>
+      <span id="y" class="key">Y</span>
+      <span id="x" class="key">X</span>
+      <span id="c" class="key">C</span>
+      <span id="v" class="key">V</span>
+      <span id="b" class="key">B</span>
+      <span id="n" class="key">N</span>
+      <span id="m" class="key">M</span>
+      <span id="l" class="key">L</span>
+    </div>
+    <div class="morse-code">
+      <h1 id="morse-code-letter" class="morse-banner"></h1>
+    </div>
+    <div>
+      <h3>Enter mission target:</h3>
+      <input type="text" placeholder="rankfirstnamelastname (in lowercase)" id="killorder" onkeypress="soundEffect('typewriter-key.mp3')">
+
+    </div>
+    <div class="key-row-four">
+      <div>
+          <button class="killbutton" title="RELAY ORDERS"></button>
+      </div>
+      <div>
+          <table id="wrapper">
+            <tr>
+              <td><img src="./img/flat,800x800,070,f.u4.jpg" alt="" /></td>
+            </tr>
+          </table>
+          <h1 class="scoreboard"> x <span id="score"></span></h1>
+      </div>
+      <div>
+          <button class="missionbutton" title="REQUEST INTEL"></button>
+      </div>
+    </div>
+    <div>
+      <iframe src="./sounds/radiotuning.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> 
+      <audio autoplay loop=false id="playAudio">
+        <source src="./sounds/radiotuning.mp3">
+      </audio>
+    </div>
+
+    <!-- Modal Section -->
+
+    <div id="modal-lose" class="bg-modal-lose">
+	    <div class="modal-contents">
+		  <div class="close-lose">+</div>
+		  <img src="./img/BYnG.gif" alt="">
+	    </div>
+    </div>
+
+
+    <div id="modal-win" class="bg-modal-win">
+	    <div class="modal-contents">
+		  <div class="close-win">+</div>
+		  <img src="./img/giphy.gif" alt="">
+	    </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./js/main.js" async defer></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/data.js"></script>
+  </body>
+</html>

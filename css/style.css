@@ -1,0 +1,245 @@
+#main-title {
+  /*font-family: unifrakturcook, blackletter;*/
+  font-family: unifrakturmaguntia, fantasy;
+  text-align: center;
+  font-size: 5em;
+  color: #d61100;
+  margin-top: 15px;
+  text-shadow: 0 0 10px black;
+}
+
+html { 
+  background: url("../img/0110_colossus-10-with-attending-Wren.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+
+.killbutton {
+  background: url("../img/clipart2820786.png") no-repeat center center;
+  background-size: 100%;
+  border-radius: 25%;
+  width: 5vw;
+  height: 5vw;
+  border: 2px solid #d61100;
+  box-shadow: 0 10px #d61100;
+}
+
+.missionbutton {
+  background: url("../img/c45d38b97e3b03b4db9eec53d360c4b4.png") no-repeat center center;
+  background-size: 100%;
+  border-radius: 25%;
+  width: 5vw;
+  height: 5vw;
+  border: 2px solid #4C4C4C;
+  box-shadow: 0 10px #4C4C4C;
+  background-color: #666;
+}
+
+h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3vh;
+  font-family: unifrakturcook, blackletter;
+  color:#d61100;
+  font-size: 3em;
+  text-shadow: 0 0 10px black;
+}
+
+
+input {
+  border: 2px solid #666;
+  width: 41vw;
+  height: 3vh;
+  margin-bottom: 5vh;
+  margin-left: 28vw;
+  margin-right: 20vw;
+  color: black;
+  font-size: 2em;
+  font-family: American Typewriter, serif;
+  background-color: #bfc1c0;
+  text-align: center; 
+}
+
+button:hover {background-color: #666}
+
+button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.key {
+  height: 40px;
+  width: 40px;
+  background-color: #7E6440;
+  border-radius: 50%;
+  display: inline-block;
+  border: 3px solid black;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  font-size: 2em;
+  font-family: American Typewriter, serif;
+  box-shadow: 0 0 10px black;
+}
+
+.key-on {
+  height: 40px;
+  width: 40px;
+  background-color: darkkhaki;
+  border-radius: 50%;
+  display: inline-block;
+  border: 3px solid black;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  font-size: 2em; 
+  font-family: American Typewriter, serif;
+  box-shadow: 0 0 10px black;
+}
+
+
+.key-row-one {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
+.key-row-two {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 23vw;
+  margin-right: 23vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.key-row-three {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
+.key-row-four {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
+.morse-code {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.scoreboard {
+  font-family: unifrakturcook, blackletter;
+  text-shadow: 0 0 20px black;
+  color: yellow;
+  font-size: 4em;
+}
+
+.scoreboard-critical{
+  font-family: unifrakturcook, blackletter;
+  text-shadow: 0 0 20px black;
+  color:orangered;
+  font-size: 4em;
+}
+
+.scoreboard-ok {
+  font-family: unifrakturcook, blackletter;
+  text-shadow: 0 0 20px black;
+  color: yellowgreen;
+  font-size: 4em;
+}
+
+#morse-code-letter {
+  color: darkolivegreen;
+  font-family: American Typewriter, serif;
+  /*font-family: unifrakturcook, blackletter;*/
+  text-shadow: 0 0 10px black;
+}
+
+.morse-banner {
+  background-color: darkkhaki;
+}
+
+#wrapper td {
+  vertical-align: middle;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: auto;
+  height: 50px;
+}
+
+.bg-modal-lose {
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.bg-modal-win {
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-contents {
+	height: 300px;
+	width: 500px;
+	background-color: darkolivegreen;
+	text-align: center;
+	padding: 0px;
+	position: relative;
+	border-radius: 4px;
+}
+
+input {
+	margin: 15px auto;
+	display: block;
+	width: 50%;
+	padding: 8px;
+	border: 1px solid gray;
+}
+
+.close-lose {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 42px;
+	color: #333;
+	transform: rotate(45deg);
+	cursor: pointer;
+}
+
+.close-win {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 42px;
+	color: #333;
+	transform: rotate(45deg);
+	cursor: pointer;
+}
