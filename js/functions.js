@@ -213,7 +213,6 @@ function morseChart() {
   } else {
     document.getElementById("morse-chart").style.visibility="hidden";
   }
-  
 };
 
 
