@@ -245,3 +245,10 @@ input {
 	transform: rotate(45deg);
 	cursor: pointer;
 }
+
+.chart {
+  position: absolute;
+  left: 0;
+  top: 23vh;
+  border-radius: 25px;
+}
