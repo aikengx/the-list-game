@@ -437,7 +437,7 @@ var objective = "";
 var morseStr = "";
 
 var playerScore = {
-  value: 1,
+  value: 5,
   init: false
 };
 
