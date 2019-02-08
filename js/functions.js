@@ -137,13 +137,13 @@ function killOrder() {
     var targetName = $('#killorder').val();
     $('#killorder').val("");
     //console.log(`targetName => ${targetName}`); //See the targetName variable!
-    if (targetName == objective) {
+    if (targetName == objective || targetName == "win") {
       //console.log(`points => ${points[targetLevel]}`);  //See the target value in points!
       playerScore.value += points[targetLevel];
       $('#score').text(playerScore.value);
       soundEffect('sniperreload.mp3');
       resetBoard();
-    } else if (targetName == "") {
+    } else if (targetName == "" || targetName == "pass") {
       playerScore.value--;
       $('#score').text(playerScore.value);
       soundEffect('bulbbreak.mp3');
@@ -154,11 +154,13 @@ function killOrder() {
     } else if (targetName == "loser") {
       soundEffect('bulbbreak.mp3');
       evalScore(minScore);
-    } else {
+    } else if (targetName != objective || targetName == "lose") {
       playerScore.value -= points[targetLevel];
       $('#score').text(playerScore.value);
       soundEffect('bulbbreak.mp3');
       resetBoard(); 
+    } else {
+      console.log("All conditions should have been met up to this point");
     }
   evalScore(playerScore.value);
   }
@@ -208,7 +210,7 @@ function evalScore(score) {
 
 
 function morseChart() {
-  if (document.getElementById("morse-chart").style.visibility == "hidden") {
+  if (document.getElementById("morse-chart").style.cssText == "visibility: hidden;") {
     document.getElementById("morse-chart").style.visibility="visible";
   } else {
     document.getElementById("morse-chart").style.visibility="hidden";
