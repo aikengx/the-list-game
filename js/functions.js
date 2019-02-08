@@ -142,11 +142,13 @@ function killOrder() {
       playerScore.value += points[targetLevel];
       $('#score').text(playerScore.value);
       soundEffect('sniperreload.mp3');
+      answerCheat();
       resetBoard();
     } else if (targetName == "" || targetName == "pass") {
       playerScore.value--;
       $('#score').text(playerScore.value);
       soundEffect('bulbbreak.mp3');
+      answerCheat();
       resetBoard(); 
     } else if (targetName == "winner") {
       soundEffect('sniperreload.mp3');
@@ -158,6 +160,7 @@ function killOrder() {
       playerScore.value -= points[targetLevel];
       $('#score').text(playerScore.value);
       soundEffect('bulbbreak.mp3');
+      answerCheat();
       resetBoard(); 
     } else {
       console.log("All conditions should have been met up to this point");
@@ -215,6 +218,11 @@ function morseChart() {
   } else {
     document.getElementById("morse-chart").style.visibility="hidden";
   }
+};
+
+
+function answerCheat() {
+  alert(`The transmission was: \r ${encryptedString} => ${objective}`);
 };
 
 
