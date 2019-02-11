@@ -40,3 +40,6 @@ In case the message is not properly decoded, the target's value will be deducted
 
 ### Hint:
 Use the SOS button on the top left corner to open a morse chart for reference.
+
+### URL:
+Play the game [here](https://aikengx.github.io/the-list-game/)
